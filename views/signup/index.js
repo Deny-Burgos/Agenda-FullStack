@@ -1,12 +1,12 @@
-// import { createNotification } from '../components/notification.js';
+import { createNotification } from '../components/notification.js';
 
-// const from = document.querySelector('#form');
+const from = document.querySelector('#form');
 const nameInput = document.querySelector('#name-input');
 const emailInput = document.querySelector('#email-input');
 const passwordInput = document.querySelector('#password-input');
 const matchInput = document.querySelector('#match-input');
 const formBtn = document.querySelector('#form-btn');
-// const notification = document.querySelector('#notification');
+const notification = document.querySelector('#notification');
 
 // regex
 const NAME_VALIDATION = /^[A-ZÑ][a-zñ]{2,10} [A-ZÑ][a-zñ]{4,16}$/;
@@ -57,4 +57,35 @@ passwordInput.addEventListener('input', e => {
 matchInput.addEventListener('input', e => {
   matchValidation = e.target.value === passwordInput.value;
   validation(matchInput, matchValidation);
+});
+
+from.addEventListener('submit', async e => {
+  e.preventDefault();
+  try {
+    const newUser = {
+      name: nameInput.value,
+      email: emailInput.value,
+      password: passwordInput.value,
+    };
+
+    // eslint-disable-next-line no-undef
+    const { data } = await axios.post('/api/users', newUser);
+    createNotification(false, data);
+    setTimeout(() => {
+      notification.innerHTML = '';
+    }, 5000);
+    nameInput.value = '';
+    emailInput.value = '';
+    passwordInput.value = '';
+    matchInput.value = '';
+    validation(nameInput, false);
+    validation(emailInput, false);
+    validation(passwordInput, false);
+    validation(matchInput, false);
+  } catch (error) {
+    createNotification(true, error.response.data.error);
+    setTimeout(() => {
+      notification.innerHTML = '';
+    }, 5000);
+  }
 });
