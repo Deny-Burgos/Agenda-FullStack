@@ -28,6 +28,7 @@ app.use('/login', express.static(path.resolve(__dirname, 'views', 'login')));
 app.use('/styles', express.static(path.resolve(__dirname, 'views', 'styles')));
 app.use('/components', express.static(path.resolve(__dirname, 'views', 'components')));
 app.use('/images', express.static(path.resolve('img')));
+app.use('/verify/:id/:token', express.static(path.resolve(__dirname, 'views', 'verify')));
 
 app.use(morgan('tiny'));
 
