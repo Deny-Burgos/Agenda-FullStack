@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/output.css" rel="stylesheet">
+  <title>Registro</title>
+</head>
+<body class="bg-orange-900">
+  <nav id="navbar" class="fixed top-0 right-0 left-0 bg-orange-950 shadow-orange-800 shadow-xl h-16"></nav>
+
+  <div id="notification" class="fixed top-20 right-0 left-0"></div>
+
+  <div class="pt-16 h-screen flex max-w-7xl mx-auto justify-center items-center px-4">
+    <div class="hidden lg:flex w-2/4 justify-center items-center">
+      <img class="w-3/4" src="/images/signup.svg" alt="imagen para registro">
+    </div>
+    <form id="form" class="flex flex-col gap-4 bg-orange-600/30 p-4 rounded-lg text-md shadow-lg lg:w-2/4">
+      <div class="flex flex-col gap-2">
+        <label for="name-input" class="font-bold text-zinc-900">Nombre <span class="text-red-600">*</span></label>
+        <input type="text" id="name-input" name="name-input" autocomplete="off" placeholder="Deny Burgos" class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none">
+        <p class="text-xs text-zinc-800 font-semibold">Seria tu nombre y el apellido. <br>Tanto el nombre como el apellido deben comenzar con mayusculas</p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="name-input" class="font-bold text-zinc-900">Correo <span class="text-red-600">*</span></label>
+        <input type="email" id="email-input" name="email-input" autocomplete="off" placeholder="ejemplo@correo.com" class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none">
+        <p class="text-xs text-zinc-800 font-semibold">El correo es requerido</p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="name-input" class="font-bold text-zinc-900">Contraseña<span class="text-red-600">*</span></label>
+        <input type="password" id="password-input" name="password-input" autocomplete="off" class="rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none">
+        <p class="text-xs text-zinc-800 font-semibold">Tiene que tener minimo 8 caracteres <br>
+          Tiene que tener una mayusculas <br>
+          Tiene que tener un numero <br>
+          Tiene que tener unos de estos caracteres (. ! * +)
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="name-input" class="font-bold text-zinc-900">Confirmar Contraseña<span class="text-red-600">*</span></label>
+        <input type="password" id="match-input" name="match-input" autocomplete="off" class="rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none">
+        <p class="text-xs text-zinc-800 font-semibold">Debe coincidir con la contraseña</p>
+      </div>
+
+      <button id="form-btn" disabled class="bg-orange-500/70 py-2 px-4 rounded-lg font-bold text-white hover:bg-orange-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Registrar</button>
+    </form>
+  </div>
+
+  <script src="/components/nav.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
