@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/styles/output.css" rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Login</title>
 </head>
 <body class="bg-orange-900">
@@ -24,14 +25,14 @@
       <div class="flex flex-col gap-2">
         <label for="name-input" class="font-bold text-zinc-900">Contraseña<span class="text-red-600">*</span></label>
         <input type="password" id="password-input" name="password-input" autocomplete="off" class="rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none">
-        <p class="text-xs text-zinc-800 font-semibold"></p>
+        <p id="error-text" class="text-xs text-red-950 font-bold"></p>
       </div>
 
-      <button id="form-btn" disabled class="bg-orange-500/70 py-2 px-4 rounded-lg font-bold text-white hover:bg-orange-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Iniciar Sesion</button>
+      <button id="form-btn" class="bg-orange-500/70 py-2 px-4 rounded-lg font-bold text-white hover:bg-orange-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Iniciar Sesion</button>
     </form>
   </div>
 
   <script src="/components/nav.js"></script>
-  <!-- <script type="module" src="index.js"></script> -->
+  <script src="index.js"></script>
 </body>
 </html>
