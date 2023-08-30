@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/output.css" rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Agenda</title>
+</head>
+<body class="bg-orange-900">
+    <main id="main-container" class="pt-16 h-screen flex max-w-7xl mx-auto justify-center items-center px-4 flex-col gap-4">
+        <!-- nombre y apelido, numero telefonico -->
+        <h1 class="">Lista De Contactos </h1>
+        <form id="form" class="flex flex-col gap-4 bg-orange-600/30 p-4 rounded-lg text-md shadow-lg md:w-3/4 lg:w-2/3">
+            <input type="text" id="contact-input" placeholder="Nombre y Apellido" autocomplete="off" class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none text-center">
+            <p class="text-form">Primera letra en mayusculas en Nombre y Apellido</p>
+            <input type="text" id="phone-input" placeholder="Numero Telefonico" autocomplete="off" class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none text-center">
+            <p class="text-form">Debe ser numero Venezolano<br>Ej:02121564131</p>
+            <button id="form-btn"disabled class="bg-orange-500/70 py-2 px-4 rounded-lg font-bold text-white hover:bg-orange-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Agregar</button>
+        </form>
+        <!-- La Lista de contactos guardados  -->
+            <ul id="list" class="overflow-auto w-full max-h-1/4 md:w-3/4 md:max-h-1/2 flex flex-col gap-4 bg-orange-600/30 p-4 rounded-lg text-md shadow-lg lg:w-2/3">
+
+            </ul>
+		</main>
+    <script src="index.js"></script>
+</body>
+</html>

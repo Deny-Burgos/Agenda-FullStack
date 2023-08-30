@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
+const app = express();
 const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -26,6 +26,7 @@ app.use(cookieParser());
 app.use('/', express.static(path.resolve(__dirname, 'views', 'home')));
 app.use('/signup', express.static(path.resolve(__dirname, 'views', 'signup')));
 app.use('/login', express.static(path.resolve(__dirname, 'views', 'login')));
+app.use('/agenda', express.static(path.resolve(__dirname, 'views', 'agenda')));
 app.use('/styles', express.static(path.resolve(__dirname, 'views', 'styles')));
 app.use('/components', express.static(path.resolve(__dirname, 'views', 'components')));
 app.use('/images', express.static(path.resolve('img')));
