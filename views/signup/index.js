@@ -67,7 +67,10 @@ from.addEventListener('submit', async e => {
       email: emailInput.value,
       password: passwordInput.value,
     };
-
+    formBtn.innerHTML = `
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    `;
+    formBtn.disabled = true;
     // eslint-disable-next-line no-undef
     const { data } = await axios.post('/api/users', newUser);
     createNotification(false, data);
@@ -82,6 +85,14 @@ from.addEventListener('submit', async e => {
     validation(emailInput, false);
     validation(passwordInput, false);
     validation(matchInput, false);
+    nameValidation = false;
+    emailValidation = false;
+    passwordValidation = false;
+    matchValidation = false;
+    formBtn.innerHTML = `
+    Registrar
+  `;
+    formBtn.disabled = true;
   } catch (error) {
     createNotification(true, error.response.data.error);
     setTimeout(() => {

@@ -12,7 +12,7 @@ form.addEventListener('submit', async e => {
     };
     // eslint-disable-next-line no-undef
     await axios.post('/api/login', user);
-    window.location.pathname = '/contactos/';
+    window.location.pathname = '/agenda/';
   } catch (error) {
     console.log(error);
     errorText.innerHTML = error.response.data.error;
