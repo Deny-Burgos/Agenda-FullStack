@@ -57,7 +57,8 @@ form.addEventListener('submit', async (e) => {
   console.log(data);
   const li = document.createElement('li');
   li.id = data.id;
-  list.classList.add('p-4', 'h-1/4');
+  list.classList.add('flex');
+  list.classList.remove('hidden');
   li.classList.add('flex', 'flex-row', 'gap-3');
   li.innerHTML = `
       <input class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none text-center w-1/3 md:w-1/2 sm:w-1/2" type="text" value="${data.contacto}" readonly>
