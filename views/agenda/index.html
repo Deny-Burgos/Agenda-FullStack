@@ -9,6 +9,8 @@
     <title>Agenda</title>
 </head>
 <body class="bg-orange-900">
+  <nav id="navbar" class="fixed top-0 right-0 left-0 bg-orange-950 shadow-orange-800 shadow-xl h-16"></nav>
+
     <main id="main-container" class="pt-16 h-screen flex max-w-7xl mx-auto justify-center items-center px-4 flex-col gap-4">
         <!-- nombre y apelido, numero telefonico -->
         <h1 class="max-w-6xl h-[15%] mx-auto flex justify-center items-center text-slate-100 text-center text-4xl md:text-7xl audiowide-font">Lista De Contactos </h1>
@@ -20,9 +22,10 @@
             <button  id="form-btn"disabled class="bg-orange-500/70 py-2 px-4 rounded-lg font-bold text-white hover:bg-orange-600 text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">Agregar</button>
         </form>
         <!-- La Lista de contactos guardados  -->
-            <ul id="list" class="p-4 h-1/4 overflow-auto md:w-3/4 md:max-h-1/2 hidden flex-col gap-4 bg-orange-600/30 rounded-lg text-md shadow-lg lg:w-2/3">
+            <ul id="list" class="flex gap-4 overflow-auto md:w-3/4 md:max-h-1/2 flex-col bg-orange-600/30 rounded-lg text-md shadow-lg lg:w-2/3">
 						</ul>
 		</main>
-    <script src="index.js"></script>
+  <script src="/components/nav.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

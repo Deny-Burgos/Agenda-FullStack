@@ -54,11 +54,9 @@ form.addEventListener('submit', async (e) => {
     contacto: contactInput.value,
     phone: phoneInput.value,
   });
-  console.log(data);
   const li = document.createElement('li');
   li.id = data.id;
-  list.classList.add('flex');
-  list.classList.remove('hidden');
+  list.classList.add('p-4', 'h-1/4');
   li.classList.add('flex', 'flex-row', 'gap-3');
   li.innerHTML = `
       <input class="placeholder:text-white/30 rounded-lg p-2 bg-orange-400 focus:outline-amber-600 outline-none text-center w-1/3 md:w-1/2 sm:w-1/2" type="text" value="${data.contacto}" readonly>
@@ -82,7 +80,11 @@ form.addEventListener('submit', async (e) => {
 list.addEventListener('click', async (e) => {
   if (e.target.closest('.delete-btn')) {
     const li = e.target.closest('.delete-btn').parentElement;
-    console.log(li);
+    const btnDelete = li.children[2];
+    btnDelete.innerHTML = `
+    <div class="delete"><div></div><div></div><div></div><div></div></div>
+    `;
+    btnDelete.disabled = true;
     await axios.delete(`/api/contactos/${li.id}`)
     li.remove();
   }
